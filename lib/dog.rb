@@ -9,7 +9,7 @@ class Dog
     @name = hash[:name]
     @breed = hash[:breed]
     @id = hash[:id]
-    @@all << self 
+    @@all << self
 end
 
 def self.create_table
@@ -52,6 +52,6 @@ def self.find_by_id(id)
   new(hash)
 end
 
-def self.find_or_create
-
+def self.find_or_create_by(hash)
+  @@all.detect{|dog| dog.name == hash[:name]} || find_by_id(hash[:id])
 end
