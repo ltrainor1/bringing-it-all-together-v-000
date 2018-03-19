@@ -34,9 +34,8 @@ def save
 end
 
 def create(hash)
-
-  binding.pry
-  hash
+  new_dog = new(hash)
+  new_dog.save
 end
 
 end
