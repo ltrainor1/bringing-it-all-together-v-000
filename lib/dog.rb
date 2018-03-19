@@ -75,13 +75,13 @@ def update
   SET name = ?
   WHERE id = ?
   SQL
-  DB[:conn].execute(sql, self.name)
+  DB[:conn].execute(sql, self.name, self.id)
   sql =<<-SQL
   UPDATE dogs
   SET breed = ?
   WHERE id = ?
   SQL
-  DB[:conn].execute(sql, self.breed)
+  DB[:conn].execute(sql, self.breed, self.id)
 
 end
 
