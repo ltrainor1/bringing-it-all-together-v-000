@@ -68,3 +68,5 @@ def self.find_by_name(name)
   row = DB[:conn].execute(sql, name)[0]
   binding.pry
 end
+
+end 
