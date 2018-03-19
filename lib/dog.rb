@@ -9,7 +9,7 @@ class Dog
     @name = hash[:name]
     @breed = hash[:breed]
     @id = hash[:id]
-    @@all = []
+    @@all << self 
 end
 
 def self.create_table
