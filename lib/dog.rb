@@ -59,3 +59,5 @@ def self.new_from_db(row)
   hash = {name: row[0][1], breed: row[0][2], id: row[0][0]}
   new(hash)
 end
+
+end 
