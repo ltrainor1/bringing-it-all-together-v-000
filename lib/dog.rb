@@ -53,6 +53,7 @@ def self.find_by_id(id)
 end
 
 def self.find_or_create_by(hash)
+  binding.pry
   @@all.detect{|dog| dog.name == hash[:name] && dog.breed == hash[:breed]} || find_by_id(hash[:id])
 end
 
