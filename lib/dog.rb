@@ -62,9 +62,9 @@ end
 
 def self.find_by_name(name)
   sql =<<-SQL
-  SELECT * FROM dogs 
+  SELECT * FROM dogs
   WHERE name = ?
   SQL
-  DB[:conn].execute(sql, name)[0]
+  row = DB[:conn].execute(sql, name)[0]
   binding.pry
 end
