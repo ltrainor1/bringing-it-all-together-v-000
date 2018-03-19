@@ -55,3 +55,5 @@ end
 def self.find_or_create_by(hash)
   @@all.detect{|dog| dog.name == hash[:name]} || find_by_id(hash[:id])
 end
+
+end 
