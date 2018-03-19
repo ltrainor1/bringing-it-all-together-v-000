@@ -45,6 +45,7 @@ def self.find_by_id(id)
   SQL
   att = DB[:conn].execute(sql, id)[0]
   hash = {name: att[1], breed: att[2], id: att[0]}
+  binding.pry
   new(hash)
 end
 
