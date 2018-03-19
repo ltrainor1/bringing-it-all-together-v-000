@@ -3,10 +3,13 @@ class Dog
 
   attr_accessor :name, :breed, :id
 
+  @@all = []
+
   def initialize(hash)
     @name = hash[:name]
     @breed = hash[:breed]
     @id = hash[:id]
+    @@all = []
 end
 
 def self.create_table
@@ -48,5 +51,7 @@ def self.find_by_id(id)
   hash = {name: att[1], breed: att[2], id: att[0]}
   new(hash)
 end
+
+def self.find_or_create
 
 end
