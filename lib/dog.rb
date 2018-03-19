@@ -69,4 +69,18 @@ def self.find_by_name(name)
   @@all.detect{|dog| dog.name == row[1] && dog.id == row[0]}
 end
 
+def update
+  sql =<<-SQL 
+  UPDATE dogs 
+  SET name = ?
+  WHERE id = ? 
+  SQL 
+  DB[:conn].execute(sql, self.name)
+  sql =<<-SQL 
+  UPDATE dogs 
+  SET breed = ?
+  WHERE id = ? 
+  SQL 
+  DB[:conn].execute(sql, self.breed)
+
 end
