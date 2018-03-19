@@ -44,7 +44,8 @@ def self.find_by_id(id)
   WHERE id = ?
   SQL
   att = DB[:conn].execute(sql, id)[0]
-  new(att[1], att[2], att[0])
+  hash = {name: att[1], breed: att[2], id: att[0]}
+  new(hash)
 end
 
 end 
