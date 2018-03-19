@@ -40,9 +40,11 @@ end
 
 def self.find_by_id(id)
   sql =<<-SQL
-  SELECT * FROM dogs 
+  SELECT * FROM dogs
   WHERE id = ?
   SQL
   att = DB[:conn].execute(sql, id)[0]
   new(att[1], att[2], att[0])
 end
+
+end 
