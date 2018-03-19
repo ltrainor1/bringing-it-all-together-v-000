@@ -60,4 +60,4 @@ def self.new_from_db(row)
   new(hash)
 end
 
-end 
+end
