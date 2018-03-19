@@ -47,7 +47,7 @@ def self.find_by_id(id)
   SELECT * FROM dogs
   WHERE id = ?
   SQL
-  row = DB[:conn].execute(sql, id)
+  row = DB[:conn].execute(sql, id)[0]
   self.new_from_db(row)
 end
 
@@ -56,7 +56,7 @@ def self.find_or_create_by(hash)
 end
 
 def self.new_from_db(row)
-  hash = {name: row[0][1], breed: row[0][2], id: row[0][0]}
+  hash = {name: row[1], breed: row[2], id: row[0]}
   new(hash)
 end
 
