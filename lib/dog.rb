@@ -70,17 +70,19 @@ def self.find_by_name(name)
 end
 
 def update
-  sql =<<-SQL 
-  UPDATE dogs 
+  sql =<<-SQL
+  UPDATE dogs
   SET name = ?
-  WHERE id = ? 
-  SQL 
+  WHERE id = ?
+  SQL
   DB[:conn].execute(sql, self.name)
-  sql =<<-SQL 
-  UPDATE dogs 
+  sql =<<-SQL
+  UPDATE dogs
   SET breed = ?
-  WHERE id = ? 
-  SQL 
+  WHERE id = ?
+  SQL
   DB[:conn].execute(sql, self.breed)
 
 end
+
+end 
