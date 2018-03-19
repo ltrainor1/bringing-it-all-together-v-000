@@ -48,4 +48,4 @@ def self.find_by_id(id)
   new(hash)
 end
 
-end 
+end
