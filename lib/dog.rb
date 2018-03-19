@@ -33,7 +33,7 @@ def save
   self
 end
 
-def create(hash)
+def self.create(hash)
   new_dog = new(hash)
   new_dog.save
 end
