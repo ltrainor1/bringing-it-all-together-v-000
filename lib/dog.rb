@@ -69,4 +69,4 @@ def self.find_by_name(name)
   @@all.detect{|dog| dog.id == row[0]}
 end
 
-end 
+end
