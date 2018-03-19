@@ -53,7 +53,6 @@ def self.find_by_id(id)
 end
 
 def self.find_or_create_by(hash)
-  binding.pry
   find_by_id(hash[:id]) || self.create(hash)
 end
 
