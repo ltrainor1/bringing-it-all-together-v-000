@@ -66,7 +66,7 @@ def self.find_by_name(name)
   WHERE name = ?
   SQL
   row = DB[:conn].execute(sql, name)[0]
-  binding.pry
+  @@all.detect{|dog| dog.id == row[0]}
 end
 
 end 
